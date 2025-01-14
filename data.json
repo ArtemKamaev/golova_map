@@ -1,0 +1,87 @@
+[
+  {
+    "coordinates": [37.815873, 55.925196],
+    "logo": "./img/logo.png",
+    "name": "Light sound lab 1",
+    "slogan": "доверьте ваше событие команде профессионалов",
+    "tags": ["звук", "свет", "сцена", "спецэффекты", "декорации"],
+    "city": "г. Москва",
+    "office_hours": {
+      "start": "9:00",
+      "end": "18:00"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+    "link": "https://lslpro.ru/",
+    "tel": "41(51)620-46-67",
+    "email": "yotoipreuweipru-7109@yopmail.com",
+    "condition_work": "Работаем только в своем регионе"
+  },
+  {
+    "coordinates": [37.38747, 55.651653],
+    "logo": "./img/logo.png",
+    "name": "Light sound lab 2",
+    "slogan": "доверьте ваше событие команде профессионалов",
+    "tags": ["звук", "свет", "сцена", "спецэффекты", "декорации"],
+    "city": "г. Москва",
+    "office_hours": {
+      "start": "9:00",
+      "end": "18:00"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+    "link": "https://lslpro.ru/",
+    "tel": "41(51)620-46-67",
+    "email": "yotoipreuweipru-7109@yopmail.com",
+    "condition_work": "Работаем только в своем регионе"
+  },
+  {
+    "coordinates": [37.319067, 55.871717],
+    "logo": "./img/logo.png",
+    "name": "Light sound lab 3",
+    "slogan": "доверьте ваше событие команде профессионалов",
+    "tags": ["звук", "свет", "сцена", "спецэффекты", "декорации"],
+    "city": "г. Москва",
+    "office_hours": {
+      "start": "9:00",
+      "end": "18:00"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+    "link": "https://lslpro.ru/",
+    "tel": "41(51)620-46-67",
+    "email": "yotoipreuweipru-7109@yopmail.com",
+    "condition_work": "Работаем только в своем регионе"
+  },
+  {
+    "coordinates": [37.618696, 55.759403],
+    "logo": "./img/logo.png",
+    "name": "Light sound lab 4",
+    "slogan": "доверьте ваше событие команде профессионалов",
+    "tags": ["звук", "свет", "сцена", "спецэффекты", "декорации"],
+    "city": "г. Москва",
+    "office_hours": {
+      "start": "9:00",
+      "end": "18:00"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+    "link": "https://lslpro.ru/",
+    "tel": "41(51)620-46-67",
+    "email": "yotoipreuweipru-7109@yopmail.com",
+    "condition_work": "Работаем только в своем регионе"
+  },
+  {
+    "coordinates": [135.071917, 48.480229],
+    "logo": "./img/logo.png",
+    "name": "Light sound lab 5",
+    "slogan": "доверьте ваше событие команде профессионалов",
+    "tags": ["звук", "свет", "сцена", "спецэффекты", "декорации"],
+    "city": "г. Москва",
+    "office_hours": {
+      "start": "9:00",
+      "end": "18:00"
+    },
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+    "link": "https://lslpro.ru/",
+    "tel": "41(51)620-46-67",
+    "email": "yotoipreuweipru-7109@yopmail.com",
+    "condition_work": "Работаем только в своем регионе"
+  }
+]

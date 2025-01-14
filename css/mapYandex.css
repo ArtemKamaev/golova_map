@@ -1,0 +1,367 @@
+@font-face {
+  font-family: "PragmataProMono";
+  src: url("../fonts/PragmataProMono.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PragmataProMono";
+  src: url("../fonts/PragmataProMonoBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PragmataProMono";
+  src: url("../fonts/PragmataProMonoItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "PragmataProMono";
+  src: url("../fonts/PragmataProMonoBoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+html,
+body,
+#map {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "PragmataProMono", Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.circle {
+  cursor: pointer;
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  color: var(--interact-action);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+}
+
+.circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 90%;
+  height: 90%;
+
+  border-radius: 50%;
+  background-color: currentColor;
+
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.circle-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #fff;
+}
+
+.my-marker {
+  position: relative;
+  box-sizing: border-box;
+  transform: translate(-50%, calc(-50% - 24px));
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(10px, 50%);
+  width: 378px;
+  padding: 16px 20px;
+  border-radius: .4rem;
+  background-color: #fff;
+  font-size: .9rem;
+  color: #333333;
+}
+
+@media (max-width: 1024px) {
+  .popup {
+    width: calc(320px - 42px);
+    left: 0;
+    transform: translate(-50%, calc(100% + 20px));
+  }
+}
+
+.popup .logo {
+  width: 100%;
+  
+  filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+}
+
+.popup:hover .logo {
+  width: 100%;
+  
+  filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -o-filter: grayscale(0);
+}
+
+.popup .header {
+  margin-top: .8rem;
+  margin-bottom: .8rem;
+}
+
+.popup .header .title {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.popup .header .slogan {
+  padding: .3rem 0
+}
+
+.popup .header .tags {
+  color: #afafaf;
+  padding: .3rem 0;
+  word-break: break-word;
+}
+
+.popup .geo {
+  margin-bottom: .8rem;
+  font-size: 1rem;
+}
+
+.popup .geo .office {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .6rem;
+}
+
+.popup .geo .office .city,
+.popup .geo .office .clock,
+.popup .geo .coordinates,
+.popup .contacts .link,
+.popup .contacts .tel,
+.popup .contacts .email {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.popup .geo .coordinates {
+  margin-top: .6rem;
+}
+
+.popup .description-block {
+  margin-bottom: .8rem;
+}
+
+.popup .description-block .desc-title {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: .4rem 0;
+}
+
+.popup .description-block .more {
+  text-align: right;
+  margin-top: .4rem;
+}
+
+.popup .description-block .more .toggle-more {
+  font-size: .8rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0 6px;
+  cursor: pointer;
+  display: none;
+}
+
+.popup .description-block .description {
+  max-height: 4.5em; /* Ограничение по высоте: 3 строки при line-height = 1.5 */
+  overflow: hidden;
+  position: relative;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+}
+
+.popup .description-block .description::after {
+  content: '...';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  padding-left: 5px;
+  height: 1.5em;
+  display: none;
+}
+
+.popup .description-block .description.overflowed::after {
+  display: block; /* Показываем многоточие только если текст обрезан */
+}
+
+.popup .description-block .description.expanded {
+  max-height: none;
+  overflow: visible;
+}
+
+.popup .description-block .description.expanded::after {
+  content: ''; /* Убираем многоточие */
+}
+
+.popup .contacts .link,
+.popup .contacts .tel,
+.popup .contacts .email {
+  margin-top: .6rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .popup .contacts .link,
+  .popup .contacts .tel,
+  .popup .contacts .email {
+    font-size: .9rem;
+  }
+}
+
+.popup .condition {
+  margin-top: .8rem;
+  padding: .6rem;
+  background-color: #F7F7F7;
+  border-radius: .4rem;
+  display: inline-block;
+}
+
+.popup .condition::before {
+  content: '*';
+  vertical-align: super;
+  line-height: 0;
+}
+
+.popup .close-popup {
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 320px;
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: -320px;
+  transition: left ease-in-out .3s;
+}
+
+.sidebar .sidebar-container {
+  padding: 2rem;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sidebar .sidebar-search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #D8DCE1;
+  border-radius: .4rem;
+  padding: 0;
+  padding-right: .6rem;
+  overflow: hidden;
+}
+
+.sidebar .sidebar-search-icon {
+  background-color: #F5F5F5;
+  padding: .5rem .6rem;
+}
+
+.sidebar .sidebar-search-input {
+  padding: 0 .6rem;
+  flex: 1;
+}
+
+.sidebar .sidebar-search-input input {
+  width: 160px;
+  border: 0;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1;
+  font-family: "PragmataProMono", Arial, Helvetica, sans-serif;
+}
+
+.sidebar .sidebar-search-close {
+  cursor: pointer;
+}
+
+.sidebar .sidebar-organizations {
+  margin-top: 2rem;
+}
+
+.sidebar .sidebar-organizations .sidebar-org-item {
+  margin: 1rem 0;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-organizations .sidebar-org-item .sidebar-org-name {
+  text-transform: uppercase;
+}
+
+.sidebar .sidebar-organizations .sidebar-org-item .sidebar-org-desc {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.sidebar .sidebar-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  transform: translate(100%, 0);
+  padding: .6rem;
+  border: 0;
+  border-top-right-radius: .4rem;
+  border-bottom-right-radius: .4rem;
+  background-color: #333333;
+  color: white;
+  cursor: pointer;
+}
+
+.ymaps3x0--main-engine-container {
+  filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+}
