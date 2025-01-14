@@ -237,8 +237,6 @@ async function main() {
     let currentElement = event.target;
 
     while (currentElement) {
-      console.log(parent.classList);
-
       if (
         currentElement.classList.contains("ymaps3x0--marker") ||
         currentElement.classList.contains("sidebar")
@@ -247,8 +245,6 @@ async function main() {
       }
       currentElement = currentElement.parentElement;
     }
-
-    console.log(currentElement);
 
     if (!currentElement) {
       markersList.forEach((m) => {
