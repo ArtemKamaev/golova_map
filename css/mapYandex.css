@@ -106,7 +106,7 @@ a {
   .popup {
     width: calc(320px - 42px);
     left: 0;
-    transform: translate(-50%, calc(100% + 20px));
+    transform: translate(-50%, calc(50% + 20px));
   }
 }
 
